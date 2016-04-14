@@ -5,10 +5,10 @@ import twitter4j.conf.ConfigurationBuilder;
 
 public class Config {
 
-    private static final String consumer = "CXvW81z2wjLxBBB5ryZUL3bcC";
-    private static final String consumerKey = "AMDwiMzcvjhQ8OIVRIIrdmaDrlw7zqyhsZ5OexrCPndEPuS3qW";
-    private static final String token = "287673291-OHUSEj6tdrY5PlWqIVW9K3A2fPxgSUisDzff0MD6";
-    private static final String tokenSecret = "BxpjgYhxCoMh0C2UBX0Du00H9lcZGNXgUI0yCxrYJIvrb";
+    private static final String consumer = "guxVAIjaPMZO0TOR0IsOwCY64";
+    private static final String consumerKey = "83fg7tZupgneMPQSM3bHY4bVQAwt1f5IXcCC5I3ZcL88atKYvc";
+    private static final String token = "287673291-0Mi0SIs3wSQ3ErLeEyyM9Bk1Q9KCnGxv5mMSJ5b1";
+    private static final String tokenSecret = "R82EbVwo46QQG60X0AcDM8Au6kNtGyRJ5ihErGP3sFTYz";
 
     private static Config instance;
     private final Configuration config;
