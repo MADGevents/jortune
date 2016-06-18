@@ -2,7 +2,10 @@ package com.alexsimo.jortune;
 
 import twitter4j.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class App {
@@ -12,6 +15,7 @@ public class App {
     private static List<String> ignored = new ArrayList<String>() {{
         add("MADGevents");
         add("alexsimonescu");
+        add("Schibsted_Eng");
     }};
 
     public static void main(String[] args) {
@@ -26,7 +30,7 @@ public class App {
             processUsers(users, result);
 
             ArrayList<String> list = new ArrayList<>(users);
-            Collections.shuffle(list);
+            //Collections.shuffle(list);
 
             AtomicInteger position = new AtomicInteger(1);
             list.forEach(s -> printUser(position, s));
@@ -38,7 +42,8 @@ public class App {
     }
 
     private static void printUser(AtomicInteger position, String value) {
-        System.out.println(String.format("%d - @%s", position.getAndIncrement(), value));
+//        System.out.println(String.format("%d - @%s", position.getAndIncrement(), value));
+        System.out.println(String.format("@%s", value));
     }
 
     private static Query buildQuery() {
@@ -66,7 +71,8 @@ public class App {
     }
 
     private static boolean tagIsPresent(Status status) {
-        return status.getText().contains(hashtag);
+        String text = status.getText().toLowerCase();
+        return text.contains(hashtag.toLowerCase());
     }
 
     private static boolean userIgnored(Status status) {
